@@ -21,10 +21,10 @@ public class ParkingFloorRepository {
     }
 
     private void init() {
-        floors.add(new Floor( 10, 200));
-        floors.add(new Floor( 5.5, 130));
-        floors.add(new Floor( 6, 78.2));
-        floors.add(new Floor( 6.8, 25.2));
+        floors.add(new Floor( 0, 10, 200));
+        floors.add(new Floor( 1, 5.5, 130));
+        floors.add(new Floor( 2, 6, 78.2));
+        floors.add(new Floor( 3, 6.8, 25.2));
     }
 
     public List<Floor> getFloors() {

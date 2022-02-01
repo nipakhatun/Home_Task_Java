@@ -1,15 +1,17 @@
 package com.car.parking.model;
 
 public class Floor {
+    private int floorNumber;
     private final double height;
     private final double totalWeight;
     private volatile double occupiedWeight;
     private double unitPrice;
 
-    public Floor(double height, double totalWeight) {
+    public Floor(int floorNumber,double height, double totalWeight) {
         if (height <= 0) {
             throw new RuntimeException("please insert valid height!");
         }
+        this.floorNumber = floorNumber;
         this.height = height;
         this.totalWeight = totalWeight;
         unitPrice = totalWeight / height;
@@ -56,5 +58,13 @@ public class Floor {
 
     public double getTotalFare(Car car) {
         return unitPrice*car.getTotalSpendTimeInPark();
+    }
+
+    public int getFloorNumber() {
+        return floorNumber;
+    }
+
+    public void setFloorNumber(int floorNumber) {
+        this.floorNumber = floorNumber;
     }
 }
